@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Minhas Tarefas</h1>
+      <p class="subtitle" id="subtitle">0 tarefas pendentes</p>
+    </header>
+
+    <div class="input-area">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Adicionar nova tarefa..."
+        maxlength="200"
+        autocomplete="off"
+      />
+      <button id="add-btn" aria-label="Adicionar tarefa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="pending">Pendentes</button>
+      <button class="filter-btn" data-filter="done">Concluídas</button>
+    </div>
+
+    <ul id="task-list" aria-label="Lista de tarefas"></ul>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 11l3 3L22 4"></path>
+        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+      </svg>
+      <p>Nenhuma tarefa aqui</p>
+    </div>
+
+    <footer id="footer" hidden>
+      <span id="done-count">0 concluídas</span>
+      <button id="clear-done-btn">Limpar concluídas</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
